@@ -10,3 +10,4 @@ The Python files contain the answers to the LeetCode question.
 | Question | Python Runtime Performance (%) | Python Memory Performance (%) |
 | --- | --- | --- |
 | 88 | 100.0 | 83.3 |
+| 27 | 100.0 | 98.7 |
