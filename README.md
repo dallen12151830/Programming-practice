@@ -13,4 +13,4 @@ The Python files contain the answers to the LeetCode question.
 | 27 | 100.0 | 98.7 |
 | 26 | 100.0 | 97.0 |
 | 80 | 94.3 | 56.7 |
-| 169 | 100.0 | 90.9 |
+| 169 | 100.0 | 98.2 |
