@@ -1,16 +1,49 @@
-# -*- coding: utf-8 -*-
 """
-Created on Mon Aug 21 15:40:36 2023
+You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0].
 
-@author: HP
+Each element nums[i] represents the maximum length of a forward jump from index i. In other words, if you are at nums[i], you can jump to any nums[i + j] where:
+
+0 <= j <= nums[i] and
+i + j < n
+Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can reach nums[n - 1].
+
+ 
+
+Example 1:
+
+Input: nums = [2,3,1,1,4]
+Output: 2
+Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index.
+Example 2:
+
+Input: nums = [2,3,0,1,4]
+Output: 2
+ 
+
+Constraints:
+
+1 <= nums.length <= 104
+0 <= nums[i] <= 1000
+It's guaranteed that you can reach nums[n - 1].
 """
 
-class Solution:
+class Solution(object):
     def jump(self, nums):
-        x = [nums[i]+ i for i in range(len(nums))]
-
-        l, r, jump = 0, 0, 0
-        while r < len(nums)-1:
-            jump += 1
-            l, r = r+1, max(x[l: r+1])
-        return jump
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        max_num = 0
+        steps = 0
+        target = 0
+        previous = 0
+        next_target = 0
+        len_num_step = len(nums)-1
+        while target < len_num_step:
+            
+            for i in range(previous, target+1):
+                next_target = max(i+nums[i], next_target)
+            previous = target
+            target = next_target
+            steps+=1
+        return steps
